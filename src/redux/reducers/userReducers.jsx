@@ -2,7 +2,10 @@ import { SET_AUTHENTICATED, SET_UNAUTHENTICATED, SET_USER } from "../types";
 
 const initialUserState = {
   authenticated: false,
-  loading: true
+  loading: false,
+  credentials: {},
+  likes: [],
+  notifications: []
 };
 
 export default function(state = initialUserState, action) {
@@ -21,8 +24,6 @@ export default function(state = initialUserState, action) {
         ...action.payload
       };
     default:
-      return {
-        state
-      };
+      return state;
   }
 }

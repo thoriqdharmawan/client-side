@@ -2,25 +2,34 @@ import React, { Component } from "react";
 import App from "./App";
 
 // Redux
-import { Provider } from "react-redux";
-import store from "./redux/store";
+import { connect } from "react-redux";
+import { userLogin } from "./redux/actions/userActions";
 
 // Pages
 import Login from "./pages/Login";
 
 class Routing extends Component {
   state = {
-    auth: true
+    auth: false
   };
 
+  componentDidMount() {
+    // console.log("mapaction : ", .authenticated);
+  }
+
   render() {
-    let page = this.state.auth ? <App /> : <Login />;
-    return (
-      <div>
-        <Provider store={store}>{page}</Provider>
-      </div>
-    );
+    const { authenticated } = this.props.user;
+    let page = authenticated ? <App /> : <Login />;
+    return <div>{page}</div>;
   }
 }
 
-export default Routing;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+const mapActionToProps = {
+  userLogin
+};
+
+export default connect(mapStateToProps, mapActionToProps)(Routing);

@@ -104,7 +104,7 @@ const Navbars = params => {
               </Link>
             </NavItem>
             <NavItem>
-              <Link to="/logout">
+              <Link to="/">
                 <NavLink className="nav-link-icon">
                   <div onClick={handleLogout}>
                     <i className="fa fa-sign-out-alt" />

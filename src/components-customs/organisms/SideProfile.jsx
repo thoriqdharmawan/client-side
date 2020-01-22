@@ -2,6 +2,9 @@ import React from "react";
 
 import Profile1 from "../../assets/img/theme/team-1-800x800.jpg";
 
+// Redux
+import { connect } from "react-redux";
+
 import {
   Row,
   Col,
@@ -12,12 +15,14 @@ import {
   CardText
 } from "reactstrap";
 
-const SideProfile = () => {
+const SideProfile = ({ user }) => {
   return (
     <Card className="mb-3">
       <CardImg alt="..." src={Profile1} top />
       <CardBody>
-        <CardTitle className="profile-name">Thoriq Dharmawan</CardTitle>
+        <CardTitle className="profile-name">
+          {user.credentials.handle}
+        </CardTitle>
         <CardText>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut
           reiciendis dolorum cumque exceptu
@@ -31,4 +36,10 @@ const SideProfile = () => {
   );
 };
 
-export default SideProfile;
+const mapStateToProps = state => ({
+  user: state.user
+});
+
+const mapActionToProps = {};
+
+export default connect(mapStateToProps, mapActionToProps)(SideProfile);

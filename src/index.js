@@ -7,5 +7,12 @@ import "./assets/scss/argon-dashboard-react.scss";
 
 // import App from "./App";
 import Routing from "./Routing";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
-ReactDOM.render(<Routing />, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    <Routing />
+  </Provider>,
+  document.getElementById("root")
+);
