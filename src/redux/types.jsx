@@ -4,7 +4,8 @@ export const SET_UNAUTHENTICATED = "SET_UNAUTHENTICATED";
 export const SET_USER = "SET_USER";
 
 // DATA
-export const SET_POST = "SET_POST";
+export const SET_SCREAMS = "SET_SCREAMS";
+export const LOADING_DATA = "LOADING_DATA";
 
 // UI
 export const SET_LOADING = "SET_LOADING";

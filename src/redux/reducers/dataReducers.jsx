@@ -1,16 +1,23 @@
-import { SET_POST } from "../types";
+import { SET_SCREAMS, LOADING_DATA } from "../types";
 
 const initialState = {
-  posts: [],
-  likes: false
+  screams: [],
+  scream: {},
+  loading: false
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SET_POST:
+    case SET_SCREAMS:
       return {
         ...state,
-        posts: "PLUS 1"
+        screams: action.payload,
+        loading: false
+      };
+    case LOADING_DATA:
+      return {
+        ...state,
+        loading: true
       };
     default:
       return initialState;

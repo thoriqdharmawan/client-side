@@ -12,22 +12,17 @@ import {
   Input
 } from "reactstrap";
 
-const Posts = () => {
-  const handleDeletePost = e => {
-    e.preventDefault();
-    console.log("deleted");
-  };
-
-  const handleLikePost = e => {
-    e.preventDefault();
-    console.log("liked");
-  };
-
-  const handleCommentPost = e => {
-    e.preventDefault();
-    console.log("Commented");
-  };
-
+const Posts = ({
+  name,
+  profil,
+  createdAt,
+  body,
+  likeCount,
+  commentCount,
+  handleLikePost,
+  handleCommentPost,
+  handleDeletePost
+}) => {
   return (
     <div>
       <Card className="mb-3">
@@ -35,13 +30,13 @@ const Posts = () => {
           <Row>
             <Col className="col-sm" sm="1" xs="2">
               <div className="d-flex align-items-center avatar">
-                <img src="" alt="" />
+                <img src={profil} alt="profil" />
               </div>
             </Col>
             <Col className="col-sm " sm="11" xs="10">
               <div className=" name overflow-hidden ml-3">
-                <h2 className="mb-0 ">Thoriq Dharmawan</h2>
-                <small>3 Januari 2010</small>
+                <h2 className="mb-0 ">{name}</h2>
+                <small>{createdAt}</small>
               </div>
               <Button
                 className="float-right"
@@ -56,12 +51,7 @@ const Posts = () => {
           </Row>
         </CardHeader>
         <CardBody>
-          <CardText>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur,
-            ad? Fugit dolore voluptatum quam debitis similique veniam ullam
-            provident maxime laborum enim iure explicabo porro accusantium,
-            deserunt eos modi rem?
-          </CardText>
+          <CardText>{body}</CardText>
         </CardBody>
         <CardFooter className="text-muted">
           <Button
@@ -71,7 +61,7 @@ const Posts = () => {
             type="button"
           >
             <i className="fas fa-heart" />
-            <span className="ml-2">20</span>
+            <span className="ml-2">{likeCount}</span>
             <span className="ml-2">Likes</span>
           </Button>
           <Button
@@ -81,7 +71,7 @@ const Posts = () => {
             type="button"
           >
             <i className="far fa-comment" />
-            <span className="ml-2">104</span>
+            <span className="ml-2">{commentCount}</span>
             <span className="ml-2">Comments</span>
           </Button>
         </CardFooter>
