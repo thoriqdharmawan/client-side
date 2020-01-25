@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.1",
+    "dayjs": "^1.8.19",
     "node-sass": "^4.13.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -40,4 +41,3 @@
   },
   "proxy": "https://us-central1-socialmediathoriq.cloudfunctions.net/api"
 }
-

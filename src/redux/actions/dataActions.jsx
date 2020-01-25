@@ -6,6 +6,7 @@ export const getScreams = () => dispatch => {
   axios
     .get("/screams")
     .then(res => {
+      console.log("data diambil : ", res.data);
       dispatch({
         type: SET_SCREAMS,
         payload: res.data

@@ -1,4 +1,6 @@
 import React from "react";
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
 
 import {
   Row,
@@ -23,6 +25,8 @@ const Posts = ({
   handleCommentPost,
   handleDeletePost
 }) => {
+  dayjs.extend(relativeTime);
+
   return (
     <div>
       <Card className="mb-3">
@@ -36,7 +40,7 @@ const Posts = ({
             <Col className="col-sm " sm="11" xs="10">
               <div className=" name overflow-hidden ml-3">
                 <h2 className="mb-0 ">{name}</h2>
-                <small>{createdAt}</small>
+                <small>{dayjs(createdAt).fromNow()}</small>
               </div>
               <Button
                 className="float-right"

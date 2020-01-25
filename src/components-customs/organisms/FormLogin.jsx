@@ -17,6 +17,7 @@ const FormLogin = params => {
 
   const handleLogin = () => {
     params.userLogin(userData, params.history);
+    // console.log("data nya : ", params.data.screams);
   };
 
   const handleChange = e => {
@@ -76,7 +77,8 @@ const FormLogin = params => {
 };
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  data: state.data
 });
 
 const mapActionToProps = {

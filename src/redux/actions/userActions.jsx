@@ -1,4 +1,5 @@
 import { SET_AUTHENTICATED, SET_UNAUTHENTICATED, SET_USER } from "../types";
+import { getScreams } from "./dataActions";
 import axios from "axios";
 
 export const userLogin = (userData, history) => dispatch => {
@@ -7,6 +8,7 @@ export const userLogin = (userData, history) => dispatch => {
     .then(res => {
       setAuthorizationHeader(res.data.token);
       dispatch(getUserData());
+      dispatch(getScreams());
       console.log("res : ", res);
       history.push("/");
     })
