@@ -1,4 +1,4 @@
-import { SET_AUTHENTICATED, SET_UNAUTHENTICATED, SET_USER } from "../types";
+import { SET_UNAUTHENTICATED, SET_USER, LOADING_USER } from "../types";
 import { getScreams } from "./dataActions";
 import axios from "axios";
 
@@ -18,7 +18,7 @@ export const userLogin = (userData, history) => dispatch => {
 };
 
 export const getUserData = () => dispatch => {
-  // dispatch({ type: LOADING_USER });
+  dispatch({ type: LOADING_USER });
   axios
     .get("/user")
     .then(res => {

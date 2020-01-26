@@ -6,16 +6,16 @@ const Users = () => {
   return (
     <>
       <ListGroupItem tag="a" href="#">
-        <img className="avatar mr-3" /> Cras justo odio
+        <img className="avatar mr-3" alt="profile" /> Cras justo odio
       </ListGroupItem>
       <ListGroupItem tag="a" href="#">
-        <img className="avatar mr-3" /> Cras justo odio
+        <img className="avatar mr-3" alt="profile" /> Cras justo odio
       </ListGroupItem>
       <ListGroupItem tag="a" href="#">
-        <img className="avatar mr-3" /> Cras justo odio
+        <img className="avatar mr-3" alt="profile" /> Cras justo odio
       </ListGroupItem>
       <ListGroupItem tag="a" href="#">
-        <img className="avatar mr-3" /> Cras justo odio
+        <img className="avatar mr-3" alt="profile" /> Cras justo odio
       </ListGroupItem>
     </>
   );

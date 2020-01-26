@@ -8,9 +8,6 @@ import { userLogout } from "../../redux/actions/userActions";
 // reactstrap components
 import {
   UncontrolledCollapse,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,

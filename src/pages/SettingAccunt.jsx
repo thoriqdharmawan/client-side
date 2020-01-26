@@ -7,11 +7,7 @@ const SettingAccunt = () => {
     <div>
       <FormGroup>
         <span>Full Name : </span>
-        <Input
-          id="exampleFormControlInput1"
-          placeholder="Nama"
-          type="text"
-        />
+        <Input id="exampleFormControlInput1" placeholder="Nama" type="text" />
       </FormGroup>
 
       <Row>
@@ -41,37 +37,19 @@ const SettingAccunt = () => {
 
       <FormGroup>
         <span>Password : </span>
-        <Input
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-          type="password"
-        />
+        <Input placeholder="name@example.com" type="password" />
       </FormGroup>
       <FormGroup>
         <span>Confirm Password : </span>
-        <Input
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-          type="password"
-        />
+        <Input placeholder="name@example.com" type="password" />
       </FormGroup>
       <FormGroup>
         <span>Profile : </span>
-        <Input
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-          type="file"
-        />
+        <Input placeholder="name@example.com" type="file" />
       </FormGroup>
       <FormGroup>
         <span>Bio : </span>
-        <Input
-          id="exampleFormControlInput1"
-          placeholder="name@example.com"
-          type="text"
-          rows="3"
-          type="textarea"
-        />
+        <Input placeholder="name@example.com" rows="3" type="textarea" />
       </FormGroup>
       <Button
         className="mt-5"
