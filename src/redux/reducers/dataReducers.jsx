@@ -1,4 +1,4 @@
-import { SET_SCREAMS, LOADING_DATA } from "../types";
+import { SET_SCREAMS, LOADING_DATA, POST_SCREAM } from "../types";
 
 const initialState = {
   screams: [],
@@ -18,6 +18,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         loading: true
+      };
+    case POST_SCREAM:
+      return {
+        ...state,
+        screams: [action.payload, ...state.screams]
       };
     default:
       return initialState;

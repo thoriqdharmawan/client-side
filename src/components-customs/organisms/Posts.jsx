@@ -26,7 +26,6 @@ const Posts = ({
   handleDeletePost
 }) => {
   dayjs.extend(relativeTime);
-
   return (
     <div>
       <Card className="mb-3">

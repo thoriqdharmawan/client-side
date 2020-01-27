@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 import { Form, Input, Button, Card } from "reactstrap";
 
-const FormPost = () => {
+// REDUX
+import { connect } from "react-redux";
+import { postScream } from "../../redux/actions/dataActions";
+
+const FormPost = ({ postScream }) => {
   const [post, setPost] = useState("");
 
   const handleChange = e => {
@@ -12,6 +16,10 @@ const FormPost = () => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log("post : ", post);
+    const newScream = {
+      body: post
+    };
+    postScream(newScream);
     setPost("");
   };
 
@@ -39,4 +47,8 @@ const FormPost = () => {
   );
 };
 
-export default FormPost;
+const mapStateToProps = state => ({
+  data: state.data
+});
+
+export default connect(mapStateToProps, { postScream })(FormPost);

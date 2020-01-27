@@ -71,3 +71,23 @@ body {
   text-align: center;
   line-height: 1;
 }
+
+.bio-info {
+  margin-bottom: 30px;
+}
+
+.header-info {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgb(73, 73, 73);
+}
+
+.value-info {
+  margin-bottom: 14px;
+}
+
+.created-at {
+  font-size: 11px;
+  color: grey;
+  margin-top: 10px;
+}

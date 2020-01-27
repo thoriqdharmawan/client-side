@@ -7,6 +7,7 @@ export const LOADING_USER = "LOADING_USER";
 // DATA
 export const SET_SCREAMS = "SET_SCREAMS";
 export const LOADING_DATA = "LOADING_DATA";
+export const POST_SCREAM = "POST_SCREAM";
 
 // UI
 export const SET_LOADING = "SET_LOADING";

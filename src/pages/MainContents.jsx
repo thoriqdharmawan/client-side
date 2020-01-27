@@ -6,10 +6,6 @@ import Posts from "../components-customs/organisms/Posts";
 import { connect } from "react-redux";
 
 class MainContents extends Component {
-  componentDidMount() {
-    console.log("Data screams : ", this.props.data.screams);
-  }
-
   render() {
     const { screams } = this.props.data;
     let recentScreamMarkup = screams.map(scream => (
@@ -41,4 +37,4 @@ const mapStateToProps = state => ({
   data: state.data
 });
 
-export default connect(mapStateToProps)(MainContents);
+export default connect(mapStateToProps, null)(MainContents);

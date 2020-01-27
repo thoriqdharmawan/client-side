@@ -1,4 +1,4 @@
-import { SET_SCREAMS, LOADING_DATA } from "../types";
+import { SET_SCREAMS, LOADING_DATA, POST_SCREAM } from "../types";
 import axios from "axios";
 
 export const getScreams = () => dispatch => {
@@ -17,5 +17,20 @@ export const getScreams = () => dispatch => {
         type: SET_SCREAMS,
         payload: []
       });
+    });
+};
+
+export const postScream = newScream => dispatch => {
+  dispatch({ type: LOADING_DATA });
+  axios
+    .post("/scream", newScream)
+    .then(res => {
+      dispatch({
+        type: POST_SCREAM,
+        payload: res.data
+      });
+    })
+    .catch(err => {
+      console.log("error post: ", err);
     });
 };
