@@ -2,6 +2,8 @@ import React from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
+import DeleteScream from "../atoms/DeleteScream";
+
 import {
   Row,
   Col,
@@ -16,16 +18,19 @@ import {
 
 const Posts = ({
   name,
+  key,
   profil,
   createdAt,
   body,
   likeCount,
   commentCount,
   handleLikePost,
-  handleCommentPost,
-  handleDeletePost
+  handleCommentPost
 }) => {
   dayjs.extend(relativeTime);
+
+  const deleteButton = name == handle ? <DeleteScream screamId={key} /> : null;
+
   return (
     <div>
       <Card className="mb-3">
@@ -41,15 +46,7 @@ const Posts = ({
                 <h2 className="mb-0 ">{name}</h2>
                 <small>{dayjs(createdAt).fromNow()}</small>
               </div>
-              <Button
-                className="float-right"
-                color="secondary"
-                outline
-                type="button"
-                onClick={handleDeletePost}
-              >
-                <i className="far fa-trash-alt" />
-              </Button>
+              {deleteButton}
             </Col>
           </Row>
         </CardHeader>

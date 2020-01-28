@@ -91,3 +91,7 @@ body {
   color: grey;
   margin-top: 10px;
 }
+
+.disabled {
+  cursor: no-drop;
+}
