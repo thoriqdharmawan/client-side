@@ -8,6 +8,9 @@ export const LOADING_USER = "LOADING_USER";
 export const SET_SCREAMS = "SET_SCREAMS";
 export const LOADING_DATA = "LOADING_DATA";
 export const POST_SCREAM = "POST_SCREAM";
+export const LIKE_SCREAM = "LIKE_SCREAM";
+export const UNLIKE_SCREAM = "UNLIKE_SCREAM";
+export const DELETE_SCREAM = "DELETE_SCREAM";
 
 // UI
 export const SET_LOADING = "SET_LOADING";

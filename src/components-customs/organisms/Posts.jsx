@@ -29,7 +29,7 @@ const Posts = ({
 }) => {
   dayjs.extend(relativeTime);
 
-  const deleteButton = name == handle ? <DeleteScream screamId={key} /> : null;
+  // const deleteButton = name == handle ? <DeleteScream screamId={key} /> : null;
 
   return (
     <div>
@@ -46,7 +46,7 @@ const Posts = ({
                 <h2 className="mb-0 ">{name}</h2>
                 <small>{dayjs(createdAt).fromNow()}</small>
               </div>
-              {deleteButton}
+              {/* {deleteButton} */}
             </Col>
           </Row>
         </CardHeader>
