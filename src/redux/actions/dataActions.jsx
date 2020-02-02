@@ -3,8 +3,9 @@ import {
   LOADING_DATA,
   POST_SCREAM,
   LIKE_SCREAM,
-  UNLIKE_SCREAM,
-  DELETE_SCREAM
+  DELETE_SCREAM,
+  SET_USER,
+  LOADING_USER
 } from "../types";
 import axios from "axios";
 
@@ -60,6 +61,21 @@ export const likeScream = screamId => dispatch => {
         type: LIKE_SCREAM,
         payload: res.data
       });
+    })
+    .catch(err => console.log(err));
+};
+
+// ROUTE
+export const getRoute = () => dispatch => {
+  dispatch({ type: LOADING_USER });
+  axios
+    .get("/user")
+    .then(res => {
+      dispatch({
+        type: SET_USER,
+        payload: res.data
+      });
+      dispatch(getScreams());
     })
     .catch(err => console.log(err));
 };

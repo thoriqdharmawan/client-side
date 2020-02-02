@@ -38,7 +38,7 @@ function App() {
             </Switch>
           </Col>
           <Col className="bgn-red col-sm" sm="2">
-            <SideProfile />
+            {/* <SideProfile /> */}
           </Col>
         </Row>
       </Container>

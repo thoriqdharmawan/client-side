@@ -5,12 +5,8 @@ import Axios from "axios";
 // Redux
 import store from "./redux/store";
 import { connect } from "react-redux";
-import {
-  userLogin,
-  userLogout,
-  getUserData
-} from "./redux/actions/userActions";
-import { getScreams } from "./redux/actions/dataActions";
+import { userLogout } from "./redux/actions/userActions";
+import { getRoute } from "./redux/actions/dataActions";
 
 // Pages
 import Login from "./pages/Login";
@@ -23,9 +19,7 @@ if (token) {
     store.dispatch(userLogout());
   } else {
     Axios.defaults.headers.common["Authorization"] = token;
-    store.dispatch(getUserData());
-    store.dispatch(getScreams());
-    // store.dispatch({ type: SET_AUTHENTICATED });
+    store.dispatch(getRoute());
   }
 }
 
@@ -46,10 +40,8 @@ const mapStateToProps = state => ({
 });
 
 const mapActionToProps = {
-  userLogin,
   userLogout,
-  getUserData,
-  getScreams
+  getRoute
 };
 
 export default connect(mapStateToProps, mapActionToProps)(Routing);
